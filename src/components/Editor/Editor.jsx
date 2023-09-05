@@ -17,7 +17,9 @@ const Home = () => {
   const handleClick = () => {
     value.data === null
       ? alert("Field is empty")
-      : (console.log(value), axios.post("http://localhost:5000/posts", value));
+      : (console.log(value),
+        axios.post("http://localhost:5000/posts", value),
+        setValue({ data: null }));
   };
 
   const handleCancel = () => {
@@ -35,26 +37,36 @@ const Home = () => {
         formats={formats}
       />
       <div className="btns">
-        <button onClick={handleClick}>Submit</button>
-        <button onClick={handleCancel}>Discard</button>
+        <button className="submit" onClick={handleClick}>
+          Submit
+        </button>
+        <button className="discard" onClick={handleCancel}>
+          Discard
+        </button>
       </div>
-      <DIV>
-        <Div1>
+      {value.data ? (
+        <DIV>
+          <H2>Live Preview</H2>
           <Test value={value.data} />
-        </Div1>
-        <Div2>{value.data}</Div2>
-      </DIV>
+        </DIV>
+      ) : null}
     </>
   );
 };
 
 export default Home;
+
+const H2 = styled.h2`
+  text-align: center;
+`;
+
 const DIV = styled.div`
-  display: flex;
-  justify-content: space-evenly;
   align-items: baseline;
-  max-width: 1186px;
+  max-width: 1086px;
   margin: 0 auto;
+  background: #ffffffc9;
+  padding: 4px 54px;
+  border-radius: 7px
 `;
 
 const Div1 = styled.div`

@@ -3,11 +3,36 @@
 }
 .ql-toolbar.ql-snow,
 .ql-container.ql-snow,
-.ql-editor,
+.ql-editor {
+  max-width: 1086px;
+  margin: 0 auto;
+  border-color: rgb(106, 106, 106);
+  border-radius: 7px;
+  margin-bottom: 10px;
+  background: #ffffffc9;
+}
 .btns {
   max-width: 1086px;
   margin: 0 auto;
-}
-.btns {
+  border-color: rgb(106, 106, 106);
+  border-radius: 7px;
+  margin-bottom: 10px;
   margin-bottom: 50px;
+}
+
+.btns button {
+  padding: 8px 14px;
+  font-size: 13px;
+  border: none;
+  border-radius: 6px;
+}
+
+.btns .submit {
+  margin-right: 10px;
+  background: rgba(102, 200, 102, 0.826);
+  color: black;
+}
+
+.btns .discard {
+  background: rgba(209, 88, 88, 0.947);
 }

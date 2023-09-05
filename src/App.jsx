@@ -39,6 +39,11 @@ const NAV = styled.nav`
   margin-top: 20px;
   margin-bottom: 30px;
   padding: 2px;
+  width: 100%;
+  ${"" /* border-radius: 16px; */}
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(6.1px);
+  -webkit-backdrop-filter: blur(6.1px);
 `;
 
 const UL = styled.ul`

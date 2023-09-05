@@ -11,6 +11,14 @@
     {
       "data": "<p>dkdkkd</p>",
       "id": 3
+    },
+    {
+      "data": "<h1><strong style=\"color: rgb(230, 0, 0);\">New Post</strong></h1><p><span style=\"color: rgb(136, 136, 136); background-color: rgb(250, 204, 204);\">New Post</span></p>",
+      "id": 4
+    },
+    {
+      "data": "<p>New</p>",
+      "id": 5
     }
   ]
 }

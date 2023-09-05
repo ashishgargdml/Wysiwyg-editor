@@ -1,0 +1,15 @@
+.main-wrapper {
+  max-width: 1600px;
+  margin: 0 auto;
+  text-align: center;
+  /* From https://css.glass */
+}
+
+body {
+  background: url(https://news.mit.edu/sites/default/files/images/202101/MIT-coral-microbiome-01-press.jpg)
+    no-repeat center center;
+  background-size: cover;
+
+  background-color: rgb(223, 213, 216);
+  min-height: 100vh;
+}
