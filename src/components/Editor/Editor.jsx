@@ -4,6 +4,8 @@ import "react-quill/dist/quill.snow.css";
 import EditorToolbar, { modules, formats } from "./EditorToolBar";
 import axios from "axios";
 import Test from "./test";
+import { styled } from "styled-components";
+import "./editor.css";
 
 const Home = () => {
   const [value, setValue] = useState({
@@ -32,13 +34,35 @@ const Home = () => {
         modules={modules}
         formats={formats}
       />
-      <button onClick={handleClick}>Submit</button>
-      <button onClick={handleCancel}>Discard</button>
-      <div>
-        <Test value={value.data} />
+      <div className="btns">
+        <button onClick={handleClick}>Submit</button>
+        <button onClick={handleCancel}>Discard</button>
       </div>
+      <DIV>
+        <Div1>
+          <Test value={value.data} />
+        </Div1>
+        <Div2>{value.data}</Div2>
+      </DIV>
     </>
   );
 };
 
 export default Home;
+const DIV = styled.div`
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+  max-width: 1186px;
+  margin: 0 auto;
+`;
+
+const Div1 = styled.div`
+  width: 50%;
+  margin-left: 20px;
+`;
+
+const Div2 = styled.div`
+  margin-right: 20px;
+  width: 50%;
+`;

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { styled } from "styled-components";
 
 const About = () => {
   const [data, setData] = useState([]);
@@ -11,10 +12,17 @@ const About = () => {
     <>
       {data.length ? (
         data.map((item) => (
-          <div
-            dangerouslySetInnerHTML={{ __html: item.data }}
-            key={item.id}
-          ></div>
+          <>
+            <div className="Post-Number">Post {item.id}</div>
+            <HR />
+            <DIV
+              className="content"
+              dangerouslySetInnerHTML={{ __html: item.data }}
+              key={item.id}
+            ></DIV>
+            {/* <HR /> */}
+            {/* {counter++} */}
+          </>
         ))
       ) : (
         <>Loading....</>
@@ -24,3 +32,11 @@ const About = () => {
 };
 
 export default About;
+const HR = styled.hr``;
+
+const DIV = styled.div`
+  ${"" /* border: 1px solid #979797; */}
+  border-radius: 6px;
+  padding: 4px 10px;
+  margin-bottom: 20px;
+`;

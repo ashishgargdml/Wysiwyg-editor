@@ -7,7 +7,7 @@ import Welcome from "./components/Welcome/Welcome";
 const App = () => {
   return (
     <>
-      <nav>
+      <NAV>
         <UL>
           <li>
             <LINK to="/">Home</LINK>
@@ -22,7 +22,7 @@ const App = () => {
             <LINK to="/contact">Contact</LINK>
           </li>
         </UL>
-      </nav>
+      </NAV>
       <Routes>
         <Route path="/" element={<Welcome />} />
         <Route path="/editor" element={<Editor />} />
@@ -34,6 +34,12 @@ const App = () => {
 };
 
 export default App;
+
+const NAV = styled.nav`
+  margin-top: 20px;
+  margin-bottom: 30px;
+  padding: 2px;
+`;
 
 const UL = styled.ul`
   display: flex;
