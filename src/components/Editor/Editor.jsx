@@ -66,15 +66,5 @@ const DIV = styled.div`
   margin: 0 auto;
   background: #ffffffc9;
   padding: 4px 54px;
-  border-radius: 7px
-`;
-
-const Div1 = styled.div`
-  width: 50%;
-  margin-left: 20px;
-`;
-
-const Div2 = styled.div`
-  margin-right: 20px;
-  width: 50%;
+  border-radius: 7px;
 `;
