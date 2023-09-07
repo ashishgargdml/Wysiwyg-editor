@@ -5,20 +5,20 @@
       "id": 1
     },
     {
-      "data": "<h1>hello</h1>",
+      "data": "<h1>hello</h1><p>sup</p>",
       "id": 2
-    },
-    {
-      "data": "<p>dkdkkd</p>",
-      "id": 3
     },
     {
       "data": "<h1><strong style=\"color: rgb(230, 0, 0);\">New Post</strong></h1><p><span style=\"color: rgb(136, 136, 136); background-color: rgb(250, 204, 204);\">New Post</span></p>",
       "id": 4
     },
     {
-      "data": "<p>New</p>",
-      "id": 5
+      "data": "<h1><span class=\"ql-size-large ql-font-helvetica\" style=\"color: rgb(0, 138, 0); background-color: rgb(250, 204, 204);\">New Post </span></h1><ul><li><span style=\"color: rgb(230, 0, 0);\">1</span></li><li><span style=\"color: rgb(230, 0, 0);\">2</span></li><li><span style=\"color: rgb(230, 0, 0);\">3</span></li><li><span style=\"color: rgb(230, 0, 0);\">4</span></li><li><span style=\"color: rgb(230, 0, 0);\">5</span></li><li><span style=\"color: rgb(230, 0, 0);\">6</span></li></ul><ol><li><span style=\"color: rgb(0, 102, 204); background-color: rgb(204, 232, 204);\">a</span></li><li><span style=\"color: rgb(0, 102, 204); background-color: rgb(204, 232, 204);\">b</span></li><li><span style=\"color: rgb(0, 102, 204); background-color: rgb(204, 232, 204);\">c</span></li><li><span style=\"color: rgb(0, 102, 204); background-color: rgb(204, 232, 204);\">d</span></li><li><span style=\"color: rgb(0, 102, 204); background-color: rgb(204, 232, 204);\">e</span></li><li><span style=\"color: rgb(0, 102, 204); background-color: rgb(204, 232, 204);\">f</span></li></ol>",
+      "id": 6
+    },
+    {
+      "data": "<p>new post</p><p>with navigation on submit</p>",
+      "id": 7
     }
   ]
 }

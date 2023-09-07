@@ -4,31 +4,47 @@ import Posts from "./components/Posts/Posts";
 import Contact from "./components/Contact/Contact";
 import { styled } from "styled-components";
 import Welcome from "./components/Welcome/Welcome";
+import Edit from "./components/Posts/Edit";
+import { useEffect, useState } from "react";
+import "./App.css";
 const App = () => {
+  const [flag, setFlag] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setFlag(false);
+    }, 3000);
+  });
   return (
     <>
-      <NAV>
-        <UL>
-          <li>
-            <LINK to="/">Home</LINK>
-          </li>
-          <li>
-            <LINK to="/editor">Editor</LINK>
-          </li>
-          <li>
-            <LINK to="/posts">Posts</LINK>
-          </li>
-          <li>
-            <LINK to="/contact">Contact</LINK>
-          </li>
-        </UL>
-      </NAV>
-      <Routes>
-        <Route path="/" element={<Welcome />} />
-        <Route path="/editor" element={<Editor />} />
-        <Route path="/posts" element={<Posts />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      {flag ? (
+        <div className="loading"></div>
+      ) : (
+        <>
+          <NAV>
+            <UL>
+              <li>
+                <LINK to="/">Home</LINK>
+              </li>
+              <li>
+                <LINK to="/editor">Editor</LINK>
+              </li>
+              <li>
+                <LINK to="/posts">Posts</LINK>
+              </li>
+              <li>
+                <LINK to="/contact">Contact</LINK>
+              </li>
+            </UL>
+          </NAV>
+          <Routes>
+            <Route path="/" element={<Welcome />} />
+            <Route path="/editor" element={<Editor />} />
+            <Route path="/posts" element={<Posts />} />
+            <Route path="/edit-post/:id" element={<Edit />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </>
+      )}
     </>
   );
 };
@@ -44,6 +60,8 @@ const NAV = styled.nav`
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(6.1px);
   -webkit-backdrop-filter: blur(6.1px);
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.2); /* Black w/opacity/see-through */
 `;
 
 const UL = styled.ul`
@@ -54,7 +72,9 @@ const UL = styled.ul`
 
 const LINK = styled(Link)`
   text-decoration: none;
-  color: #000;
+  color: #fff;
+  letter-spacing: 1;
+  font-weight: 600;
   nav li:hover & {
     color: red;
   }

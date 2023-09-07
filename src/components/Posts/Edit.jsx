@@ -1,35 +1,39 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
-import EditorToolbar, { modules, formats } from "./EditorToolBar";
+import EditorToolbar, { modules, formats } from "../Editor/EditorToolBar";
 import axios from "axios";
-import Test from "./test";
+import Test from "../Editor/test";
 import { styled } from "styled-components";
-import { useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
-import "./editor.css";
+import { useNavigate, useParams } from "react-router-dom";
+import "../Editor/editor.css";
 
-const Home = () => {
+const Edit = () => {
   const navigate = useNavigate();
+  const { id } = useParams();
   const [value, setValue] = useState({
     data: null,
   });
-  const errMsg = () => toast.error("Fields cant be empty");
   const onChange = (content) => {
     setValue({ data: content });
   };
   const handleClick = () => {
     value.data === null
-      ? errMsg()
+      ? alert("Field is empty")
       : (console.log(value),
-        axios.post("http://localhost:5000/posts", value),
+        axios.put(`http://localhost:5000/posts/${id}`, value),
         setValue({ data: null }),
         navigate("/posts"));
   };
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/posts/${id}`)
+      .then((res) => setValue(res.data));
+    console.log(value);
+  }, []);
 
   const handleCancel = () => {
-    setValue({ data: null });
+    navigate("/posts");
   };
   return (
     <>
@@ -44,7 +48,7 @@ const Home = () => {
       />
       <div className="btns">
         <button className="submit" onClick={handleClick}>
-          Submit
+          Save Changes
         </button>
         <button className="discard" onClick={handleCancel}>
           Discard
@@ -56,23 +60,11 @@ const Home = () => {
           <Test value={value.data} />
         </DIV>
       ) : null}
-      <ToastContainer
-        position="top-center"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={false}
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
-        theme="light"
-      />
     </>
   );
 };
 
-export default Home;
+export default Edit;
 
 const H2 = styled.h2`
   text-align: center;

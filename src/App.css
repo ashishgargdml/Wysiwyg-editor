@@ -1,0 +1,11 @@
+.loading {
+  background: url("https://hackernoon.com/images/0*4Gzjgh9Y7Gu8KEtZ.gif")
+    no-repeat center center;
+  min-height: 100vh;
+  text-align: center;
+  background-size: cover;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
